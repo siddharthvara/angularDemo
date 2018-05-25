@@ -22,9 +22,30 @@ myApp.controller("myController3",function($scope){
     };
 
     var city = [
-        { name : "Jamnagar" },
-        { name : "Rajkot" },
-        { name : "Bhavnagar"}
+        { 
+            name : "Jamnagar",
+            pincode : [
+                { code : "361001"},
+                { code : "361002"},
+                { code : "361003"},
+            ]
+         },
+        { 
+            name : "Rajkot",
+            pincode : [
+                { code : "371001"},
+                { code : "371002"},
+                { code : "371003"},
+            ] 
+        },
+        { 
+            name : "Bhavnagar",
+            pincode : [
+                { code : "381001"},
+                { code : "381002"},
+                { code : "381003"},
+            ]
+        }
     ];
 
 

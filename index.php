@@ -89,10 +89,14 @@
         <div ng-controller="myController3">
             <h2>Practical: 6</h2>
             <br>
-            <h3>ng-repeat directive.</h3>
+            <h3>ng-repeat directive and nasted ng-repeat.</h3>
             <br>
             <ul>
-                <li ng-repeat="c in city">{{ c.name }}</li>
+                <li ng-repeat="c in city">{{ c.name }}
+                    <ul>
+                        <li ng-repeat="p in c.pincode">{{ p.code }}</li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
