@@ -99,6 +99,32 @@
                 </li>
             </ul>
         </div>
-    </div>
+        <hr>
+        <div ng-controller="myController3">
+                <h2>Practical: 7</h2>
+                <br>
+                <h3>Event handling in angular.</h3>
+                <br>
+                <table class="table">
+                    <thead>
+                        <th>Subject</th>
+                        <th>Likes</th>
+                        <th>Dislikes</th>
+                        <th></th>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat = "sub in subject">
+                            <td>{{ sub.name }}</td>
+                            <td>{{ sub.likes }}</td>
+                            <td>{{ sub.dislikes }}</td>
+                            <td>
+                                <input type="button" class="btn" value="Like" ng-click = "incrementLike(sub)">
+                                <input type="button" class="btn" value="Dislike" ng-click = "incrementDislike(sub)">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+    </div>    
 </body>
 </html>

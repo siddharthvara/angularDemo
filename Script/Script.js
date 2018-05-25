@@ -48,8 +48,24 @@ myApp.controller("myController3",function($scope){
         }
     ];
 
+    var subject = [
+        { name : "Subject1",likes : "0",dislikes : "0" },
+        { name : "Subject2",likes : "0",dislikes : "0" },
+        { name : "Subject3",likes : "0",dislikes : "0" },
+        { name : "Subject4",likes : "0",dislikes : "0" }
+    ];
+
 
     $scope.emp = emp;
     $scope.city = city;
+    $scope.subject = subject;
+
+    $scope.incrementLike = function(sub){
+        sub.likes ++;
+    };
+
+    $scope.incrementDislike = function(sub){
+        sub.dislikes ++;
+    };
 
 });
