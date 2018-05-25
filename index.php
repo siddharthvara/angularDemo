@@ -38,7 +38,7 @@
         </div>
         <hr>
         <div ng-controller = "myController2">
-        <h2>Practical: 4</h2>
+            <h2>Practical: 4</h2>
             <br>
             <h3>ng-scr directive.</h3>
             <br>
@@ -47,6 +47,44 @@
             Capital : {{ country.capital }}
             <br>
             <img ng-src="{{ country.flag }}" alt="Indian Flage" style="height:100px;width:200px;">
+        </div>
+        <hr>
+        <div ng-controller="myController3">
+            <h2>Practical: 5</h2>
+            <br>
+            <h3>Two way databinding.</h3>
+            <br>
+            <table>
+                <tr>
+                    <td>First Name</td>
+                    <td><input type="text" name="firstName" ng-model="emp.firstName"></td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td><input type="text" name="lastName" ng-model="emp.lastName"></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td><input type="text" name="gender" ng-model="emp.gender"></td>
+                </tr>
+            </table>
+            <br>
+            <br>
+            <table>
+                <tr>
+                    <td>First Name</td>
+                    <td>{{ emp.firstName }}</td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td>{{ emp.lastName }}</td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>{{ emp.gender }}</td>
+                </tr>
+            </table>
+            
         </div>
     </div>
 </body>

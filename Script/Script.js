@@ -13,3 +13,12 @@ myApp.controller("myController2",function($scope){
     };
     $scope.country = country;
 });
+
+myApp.controller("myController3",function($scope){
+    var emp = {
+        firstName : "Siddharth",
+        lastName : "Vara",
+        gender : "Male"
+    };
+    $scope.emp = emp;
+});
