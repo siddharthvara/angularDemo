@@ -9,7 +9,7 @@
     <script src="Script/angular.min.js"></script>
     <script src="Script/Script.js"></script>
 </head>
-<body>
+<body style="background: cornsilk;">
     <div class="container">
         <h1>Angular Demo</h1>
         <br>
@@ -30,7 +30,7 @@
         </div>
         <hr />
         <div ng-controller = "myController">
-        <h2>Practical: 3</h2>
+            <h2>Practical: 3</h2>
             <br>
             <h3>Display message using module and controller.</h3>
             <br>
@@ -84,7 +84,16 @@
                     <td>{{ emp.gender }}</td>
                 </tr>
             </table>
-            
+        </div>
+        <hr>
+        <div ng-controller="myController3">
+            <h2>Practical: 6</h2>
+            <br>
+            <h3>ng-repeat directive.</h3>
+            <br>
+            <ul>
+                <li ng-repeat="c in city">{{ c.name }}</li>
+            </ul>
         </div>
     </div>
 </body>

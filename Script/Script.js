@@ -20,5 +20,15 @@ myApp.controller("myController3",function($scope){
         lastName : "Vara",
         gender : "Male"
     };
+
+    var city = [
+        { name : "Jamnagar" },
+        { name : "Rajkot" },
+        { name : "Bhavnagar"}
+    ];
+
+
     $scope.emp = emp;
+    $scope.city = city;
+
 });
