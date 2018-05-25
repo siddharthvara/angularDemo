@@ -9,7 +9,7 @@
     <script src="Script/angular.min.js"></script>
     <script src="Script/Script.js"></script>
 </head>
-<body ng-controller = "myController">
+<body>
     <div class="container">
         <h1>Angular Demo</h1>
         <br>
@@ -29,12 +29,24 @@
             <h3>Hello {{yourName}}!</h3>
         </div>
         <hr />
-        <div>
+        <div ng-controller = "myController">
         <h2>Practical: 3</h2>
             <br>
             <h3>Display message using module and controller.</h3>
             <br>
             {{ message }}
+        </div>
+        <hr>
+        <div ng-controller = "myController2">
+        <h2>Practical: 4</h2>
+            <br>
+            <h3>ng-scr directive.</h3>
+            <br>
+            Country Name : {{ country.name }}
+            <br>
+            Capital : {{ country.capital }}
+            <br>
+            <img ng-src="{{ country.flag }}" alt="Indian Flage" style="height:100px;width:200px;">
         </div>
     </div>
 </body>
