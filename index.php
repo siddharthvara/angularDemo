@@ -14,14 +14,14 @@
         <h1>Angular Demo</h1>
         <br>
         <div>
-            <h1>Practical: 1</h1>
+            <h2>Practical: 1</h2>
             <br>
             <h3>sum using angular.</h3>
             10 + 20 = {{ 10+20 }}
         </div>
         <hr />
         <div>
-            <h1>Practical: 2</h1>
+            <h2>Practical: 2</h2>
             <br>
             <label>Name:</label>
             <input type = "text" ng-model = "yourName" placeholder = "Enter a name here">
@@ -30,7 +30,7 @@
         </div>
         <hr />
         <div>
-        <h1>Practical: 3</h1>
+        <h2>Practical: 3</h2>
             <br>
             <h3>Display message using module and controller.</h3>
             <br>
