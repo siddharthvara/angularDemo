@@ -101,20 +101,36 @@
         </div>
         <hr>
         <div ng-controller="myController3">
-                <h2>Practical: 7</h2>
+                <h2>Practical: 7 and 8</h2>
                 <br>
-                <h3>Event handling in angular.</h3>
+                <h3>Event handling and filtes in angular.</h3>
                 <br>
+                <ul>
+                    <li>uppercase filter.</li>
+                    <li>lowercase filter.</li>
+                    <li>limitTo filter.</li>
+                    <li>currency filter.</li>
+                    <li>number filter.</li>
+                    <li>orderBy filter.</li>
+                    <li>'filter' filter.</li>
+                </ul>
+                <br>
+                Enter subject: <input type = "text" ng-model = "subjectName">&nbsp;&nbsp;Row to display: <input type="number" step="1" min="1" max="5" ng-model="rowLimit">
+                <br><br>
                 <table class="table">
                     <thead>
                         <th>Subject</th>
+                        <th>Fees (Number filter)</th>
+                        <th>Fees (Currency filter)</th>
                         <th>Likes</th>
                         <th>Dislikes</th>
                         <th></th>
                     </thead>
                     <tbody>
-                        <tr ng-repeat = "sub in subject">
-                            <td>{{ sub.name }}</td>
+                        <tr ng-repeat = "sub in subject | filter: subjectName | orderBy:'name' | limitTo : rowLimit">
+                            <td>{{ sub.name | uppercase }}</td>
+                            <td>{{ sub.fees | number : 2}}</td>
+                            <td>{{ sub.fees | currency}}</td>
                             <td>{{ sub.likes }}</td>
                             <td>{{ sub.dislikes }}</td>
                             <td>

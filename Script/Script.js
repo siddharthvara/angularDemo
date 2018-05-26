@@ -49,16 +49,17 @@ myApp.controller("myController3",function($scope){
     ];
 
     var subject = [
-        { name : "Subject1",likes : "0",dislikes : "0" },
-        { name : "Subject2",likes : "0",dislikes : "0" },
-        { name : "Subject3",likes : "0",dislikes : "0" },
-        { name : "Subject4",likes : "0",dislikes : "0" }
+        { name : "Maths",fees : "5000",likes : "0",dislikes : "0" },
+        { name : "Hindi",fees : "2000",likes : "0",dislikes : "0" },
+        { name : "Computer",fees : "4000",likes : "0",dislikes : "0" },
+        { name : "English",fees : "3000",likes : "0",dislikes : "0" }
     ];
 
 
     $scope.emp = emp;
     $scope.city = city;
     $scope.subject = subject;
+    $scope.rowLimit = 3;
 
     $scope.incrementLike = function(sub){
         sub.likes ++;
