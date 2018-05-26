@@ -60,6 +60,34 @@ myApp.controller("myController3",function($scope){
     $scope.city = city;
     $scope.subject = subject;
     $scope.rowLimit = 3;
+    $scope.orderBy = "name";
+
+    //AngularJS sort rows by table header.
+    $scope.SortColumn = "name";  
+    $scope.reverseSort = false;  
+
+
+    $scope.SortData = function (column) {  
+        $scope.SortColumn = column;  
+        $scope.reverseSort = ($scope.SortColumn == column) ? !$scope.reverseSort : false;  
+        $scope.SortDate = column;  
+
+    }  
+
+    $scope.getSortClass = function (column)  
+    {  
+        
+        if ($scope.SortColumn == column) {
+              
+            return $scope.reverseSort ? 'arrow-down' : 'arrow-up';
+
+        }  
+        return '';  
+
+    }  
+
+    //AngularJS sort rows by table header.
+
 
     $scope.incrementLike = function(sub){
         sub.likes ++;

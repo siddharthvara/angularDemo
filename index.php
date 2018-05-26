@@ -101,9 +101,9 @@
         </div>
         <hr>
         <div ng-controller="myController3">
-                <h2>Practical: 7 and 8</h2>
+                <h2>Practical: 7, 8  and 9</h2>
                 <br>
-                <h3>Event handling and filtes in angular.</h3>
+                <h3>Event handling and filtes in angular and data shorting.</h3>
                 <br>
                 <ul>
                     <li>uppercase filter.</li>
@@ -117,6 +117,16 @@
                 <br>
                 Enter subject: <input type = "text" ng-model = "subjectName">&nbsp;&nbsp;Row to display: <input type="number" step="1" min="1" max="5" ng-model="rowLimit">
                 <br><br>
+                Order By : <select ng-model="orderBy">
+                                <option value="name">Name Asc</option>
+                                <option value="fees">Fees Asc</option>
+                                <option value="-fees">Fees DESC</option>
+                                <option value="likes">Likes Asc</option>
+                                <option value="-likes">Likes DESC</option>
+                                <option value="dislikes">Dislikes Asc</option>
+                                <option value="-dislikes">Dislikes DESC</option>
+                            </select>
+                <br><br>
                 <table class="table">
                     <thead>
                         <th>Subject</th>
@@ -127,7 +137,7 @@
                         <th></th>
                     </thead>
                     <tbody>
-                        <tr ng-repeat = "sub in subject | filter: subjectName | orderBy:'name' | limitTo : rowLimit">
+                        <tr ng-repeat = "sub in subject | filter: subjectName | limitTo : rowLimit | orderBy: orderBy">
                             <td>{{ sub.name | uppercase }}</td>
                             <td>{{ sub.fees | number : 2}}</td>
                             <td>{{ sub.fees | currency}}</td>
@@ -141,6 +151,46 @@
                     </tbody>
                 </table>
         </div>
+        <br>
+        <hr>
+        <div ng-controller="myController3">
+            <h2>Practical: 10</h2>
+            <br>
+            <h3>AngularJS sort rows by table header.</h3>
+            <br><br>
+            <table class="table">
+                    <thead>
+                        <th style = "cursor: pointer;" ng-click="SortData('name')">Subject<div ng-class="getSortClass('name')" ></div></th>
+                        <th style = "cursor: pointer;" ng-click="SortData('fees')">Fees <div ng-class="getSortClass('fees')" ></div></th>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat = "sub in subject|orderBy:SortColumn:reverseSort">
+                            <td>{{ sub.name | uppercase }}</td>
+                            <td>{{ sub.fees | number : 2}}</td>
+                          
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
     </div>    
 </body>
 </html>
+<style>
+.arrow-up {  
+width:0;  
+height:0;  
+border-left:5px solid transparent;  
+border-right:5px solid transparent ;  
+border-bottom:10px solid black;  
+display:inline-block;
+}  
+  
+.arrow-down {  
+width:0;  
+height:0;  
+border-left:5px solid transparent;  
+border-right:5px solid transparent;  
+border-top:10px solid black;
+display:inline-block;  
+}  
+</style>
