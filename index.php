@@ -112,7 +112,7 @@
                     <li>currency filter.</li>
                     <li>number filter.</li>
                     <li>orderBy filter.</li>
-                    <li>'filter' filter.</li>
+                    <li>'filter' filter <b>(Practical 11)</b>.</li>
                 </ul>
                 <br>
                 Enter subject: <input type = "text" ng-model = "subjectName">&nbsp;&nbsp;Row to display: <input type="number" step="1" min="1" max="5" ng-model="rowLimit">
@@ -165,7 +165,7 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat = "sub in subject|orderBy:SortColumn:reverseSort">
-                            <td>{{ sub.name | uppercase }}</td>
+                               <td>{{ sub.name | uppercase }}</td>
                             <td>{{ sub.fees | number : 2}}</td>
                           
                         </tr>
