@@ -1,5 +1,5 @@
 <?php
-$url = $_SERVER['REQUEST_URI'];
+$url = $_SERVER['APP_URL'].$_SERVER['REQUEST_URI'];
 //echo $url;
 ?>
 <!DOCTYPE html>
