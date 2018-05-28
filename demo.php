@@ -1,11 +1,12 @@
 <?php
-echo $_SERVER['SERVER_NAME'];
+$url = $_SERVER['REQUEST_URI'];
+//echo $url;
 ?>
 <!DOCTYPE html>
 <html lang="en" ng-app = "myModule">
 
 <head>
-<base href="/angularDemo/">
+<base href= <?php echo $url;?> >
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
