@@ -1,5 +1,48 @@
 
-var myApp = angular.module("myModule",[]); //create myModule
+var myApp = angular.module("myModule",["ngRoute"]); //create myModule
+
+myApp.config(function($routeProvider , $locationProvider){
+    $routeProvider
+    .when("/",{
+        templateUrl : "Template/dashboard.php",
+        controller : "dashboardController"
+    })
+    .when("/dashboard",{
+        templateUrl : "Template/dashboard.php",
+        controller : "dashboardController"
+    })
+    .when("/about",{
+        templateUrl : "Template/about.php",
+        controller : "aboutController"
+    })
+    .when("/contact",{
+        templateUrl : "Template/contact.php",
+        controller : "contactController"
+    })
+
+    //$routeProvider.otherwise({redirectTo: '/'});
+    //$locationProvider.hashPrefix('');
+    //$locationProvider.html5Mode(true);
+    $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: false
+       });
+
+    
+   
+});
+
+myApp.controller("dashboardController",function($scope){
+    $scope.message = "dashboardController";
+});
+
+myApp.controller("aboutController",function($scope){
+    $scope.message = "about";
+});
+
+myApp.controller("contactController",function($scope){
+    $scope.message = "contact";
+});
 
 myApp.controller("myController",function($scope){
     $scope.message = "Angular Tutorial";

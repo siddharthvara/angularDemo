@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <script src="Script/angular.min.js"></script>
     <script src="Script/Script.js"></script>
+    <script src="Script/angular-route.min.js"></script>
 </head>
 <body style="background: cornsilk;">
     <div class="container">
@@ -157,21 +158,32 @@
             <h2>Practical: 10</h2>
             <br>
             <h3>AngularJS sort rows by table header.</h3>
+            <input type="checkbox" ng-model="hideShow">Fees Hide
+            <br><br>
             <br><br>
             <table class="table">
                     <thead>
                         <th style = "cursor: pointer;" ng-click="SortData('name')">Subject<div ng-class="getSortClass('name')" ></div></th>
-                        <th style = "cursor: pointer;" ng-click="SortData('fees')">Fees <div ng-class="getSortClass('fees')" ></div></th>
+                        <th style = "cursor: pointer;" ng-click="SortData('fees')" ng-hide="hideShow">Fees <div ng-class="getSortClass('fees')" ></div></th>
                     </thead>
                     <tbody>
                         <tr ng-repeat = "sub in subject|orderBy:SortColumn:reverseSort">
                                <td>{{ sub.name | uppercase }}</td>
-                            <td>{{ sub.fees | number : 2}}</td>
+                            <td ng-hide="hideShow">{{ sub.fees | number : 2}}</td>
                           
                         </tr>
                     </tbody>
                 </table>
         </div>
+
+        <div ng-controller="myController3">
+            <h2>Practical: 11</h2>
+            <br>
+            <h3>AngularJS single page application.</h3>
+            <br><br>
+            <p><a href="demo.php" target="_blank">Click here</a></p>
+        </div>
+
     </div>    
 </body>
 </html>
